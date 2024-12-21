@@ -92,8 +92,15 @@
     margin: auto;
   }
   .main-banner-content h1 {
-    font-size: 115px;
+    font-size: 100px;
   }
+
+  .image-display {
+    height: 200px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
   .main-banner-image {
     margin-top: 30px;
     text-align: center;
@@ -128,9 +135,6 @@
             flex: unset;
     max-width: unset;
     margin-right: 20px;
-  }
-  .who-we-are-shape {
-    display: none;
   }
   .single-class .class-content {
     padding: 40px 15px 20px;
@@ -568,9 +572,7 @@
   .who-we-are-image {
     margin-bottom: 30px;
   }
-  .who-we-are-shape {
-    display: none;
-  }
+
   .single-class .class-content {
     padding: 40px 15px 20px;
   }

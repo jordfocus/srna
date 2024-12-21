@@ -1189,7 +1189,24 @@ Main Banner Area CSS
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
-  height: 700px;
+}
+
+.info-section {
+  padding-top: 20px;
+  padding-left: 20px;
+  background-color: pink;
+  padding-bottom: 20px;
+}
+
+.favourite-books {
+  background-image: url(../../assets/img/main-banner/main-banner-bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 20px;
 }
 
 .main-banner-item .container-fluid {
@@ -1251,7 +1268,7 @@ Main Banner Area CSS
 }
 
 .main-banner-content h1 {
-  font-size: 200px;
+  font-size: 150px;
   margin-top: 20px;
   margin-bottom: 20px;
   color: pink;
@@ -1266,10 +1283,21 @@ Main Banner Area CSS
   margin-top: 25px;
 }
 
+.main-banner-image {
+  max-height: 700px;
+}
+
+.image-display {
+  height: 500px;
+  width: 100%;
+  margin-top: 10px;
+}
+
 .main-banner-image-wrap {
   position: relative;
   text-align: center;
   z-index: 1;
+  max-height: 300px;
 }
 
 .main-banner-image-wrap .banner-image-wrap-shape {
