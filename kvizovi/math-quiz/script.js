@@ -51,7 +51,12 @@ function nextQuestion() {
 
     if (opSelector == "/") {
         for (let i = 0; i < 200; i++) {
-            if (n1 % n2 == 0 && n1 != 0 && n2 != 0 && n2 != 1 && n1 != n2) {
+            if (n1 % n2 == 0 
+                && n1 != 0 
+                && n2 != 0 
+                && n2 != 1 
+                && n1 != n2
+                && n1/n2 <= 10) {
                 break;
             }
             n1 = Math.floor(Math.random() * 100);
@@ -61,17 +66,22 @@ function nextQuestion() {
 
     if (opSelector == "*") {
         for (let i = 0; i < 100; i++) {
-            if (n1 * n2 <= 100) {
+            n1 = Math.floor(Math.random() * 10);
+            n2 = Math.floor(Math.random() * 10);
+
+            if (n1 * n2 <= 100
+                && n1 > 0
+                && n2 > 0) {
                 break;
             }
-            n1 = Math.floor(Math.random() * 100);
-            n2 = Math.floor(Math.random() * 10);
         }
     }
 
     if (opSelector == "-") {
         for (let i = 0; i < 100; i++) {
-            if (n1 > n2) {
+            if (n1 > n2
+                && n1 > 0
+                && n2 > 0) {
                 break;
             }
             n1 = Math.floor(Math.random() * 100);
@@ -79,6 +89,20 @@ function nextQuestion() {
         }
 
     }
+
+    if (opSelector == "+") {
+        for (let i = 0; i < 100; i++) {
+            if (n1 + n2 <= 100
+                && n1 > 0
+                && n2 > 0) {
+                break;
+            }
+            n1 = Math.floor(Math.random() * 100);
+            n2 = Math.floor(Math.random() * 100);
+        }
+
+    }
+
     question.innerHTML = n1 + opSelector + n2;
     answer = eval(question.innerHTML);
     question.innerHTML = question.innerHTML + " = ?";
@@ -140,13 +164,13 @@ function outro(i) {
 
 function lastmessage() {
     clearInterval(t);
-    if (fScore.innerText >= 800) {
+    if (fScore.innerText >= 850) {
         let emoji = "&#128525";
         message.innerHTML = "ОДЛИЧЕН РЕЗУЛТАТ! БРАВО!" + emoji;
-    } else if (fScore.innerText >= 500) {
+    } else if (fScore.innerText >= 700) {
         let emoji = "&#128531";
         message.innerHTML = "СКОРО ОДЛИЧНО, ДА ПОВЕЖБАМЕ УШТЕ МАЛЦЕ !!" + emoji;
-    } else if (fScore.innerText >= 100) {
+    } else if (fScore.innerText >= 450) {
         let emoji = "&#128549";
         message.innerHTML = "МОЖЕШ И ПОДОБРО, САМО  ТРЕБА ПОВЕЌЕ ВЕЖБАЊЕ" + emoji;
     } else {
