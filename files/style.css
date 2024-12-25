@@ -1209,6 +1209,11 @@ Main Banner Area CSS
   padding-bottom: 20px;
 }
 
+.kvizovi-link {
+    margin: 5px;
+    font-family: 'Comfortaa';
+}
+
 .main-banner-item .container-fluid {
   padding-right: 0;
 }
