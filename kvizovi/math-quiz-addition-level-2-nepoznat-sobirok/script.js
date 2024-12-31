@@ -75,10 +75,10 @@ function nextQuestion() {
 function getOptions() {
 
     for (let i = 0; i < 4; i++ && i != ansOpt) {
-        if (answer > 100) {
-            buttons[i].innerHTML = answer + Math.floor(Math.random() * answer * 0.4);
-        } else if (answer > 30 && answer < 100) {
-            buttons[i].innerHTML = answer + Math.floor(Math.random() * answer * 0.6);
+        if (n2 > 100) {
+            buttons[i].innerHTML = n2 + Math.floor(Math.random() * n2 * 0.4);
+        } else if (n2 > 30 && n2 < 100) {
+            buttons[i].innerHTML = n2 + Math.floor(Math.random() * n2 * 0.6);
         } else {
             buttons[i].innerHTML = Math.floor(Math.random() * 100);
         }
@@ -89,6 +89,31 @@ function getOptions() {
     }
     ansOpt = Math.floor(Math.random() * 4);
     buttons[ansOpt].innerHTML = n2;
+
+    // generate one similar value - value that will end with the same digit as the correct value
+    generateSimilarValue(n2, ansOpt);
+}
+
+function generateSimilarValue(correctAnswerValue, correctAnswerIndex)
+{
+    let lastDigit = correctAnswerValue % 10;
+    if (correctAnswerIndex == 3)
+    {
+        let similarValueIndex = Math.floor(Math.random() * 3);
+        let updatePotentialAnswer = (Math.floor(buttons[similarValueIndex].innerHTML/10)*10) + lastDigit;
+        buttons[similarValueIndex].innerHTML = updatePotentialAnswer;
+    }
+    else if (correctAnswerIndex == 0)
+    {
+        let similarValueIndex = Math.floor(Math.random() * 3) + 1;
+        let updatePotentialAnswer = (Math.floor(buttons[similarValueIndex].innerHTML/10)*10) + lastDigit;
+        buttons[similarValueIndex].innerHTML = updatePotentialAnswer;
+    }
+    else
+    {
+        let updatePotentialAnswer = (Math.floor(buttons[correctAnswerIndex+1].innerHTML/10)*10) + lastDigit;
+        buttons[correctAnswerIndex+1].innerHTML = updatePotentialAnswer;
+    }
 }
 
 function getQNo() {
@@ -140,7 +165,7 @@ function lastmessage() {
 
 function timed() {
     clearInterval(t);
-    
+
     t = setInterval(() => {
         progress.style.width = (parseFloat(progress.style.width) - 0.2) + "%";
         console.log("called");
