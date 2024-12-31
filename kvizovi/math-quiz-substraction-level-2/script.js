@@ -88,6 +88,30 @@ function getOptions() {
     }
     ansOpt = Math.floor(Math.random() * 4);
     buttons[ansOpt].innerHTML = answer;
+    // generate one similar value - value that will end with the same digit as the correct value
+    generateSimilarValue(answer, ansOpt);
+}
+
+function generateSimilarValue(correctAnswerValue, correctAnswerIndex)
+{
+    let lastDigit = correctAnswerValue % 10;
+    if (correctAnswerIndex == 3)
+    {
+        let similarValueIndex = Math.floor(Math.random() * 3);
+        let updatePotentialAnswer = (Math.floor(buttons[similarValueIndex].innerHTML/10)*10) + lastDigit;
+        buttons[similarValueIndex].innerHTML = updatePotentialAnswer;
+    }
+    else if (correctAnswerIndex == 0)
+    {
+        let similarValueIndex = Math.floor(Math.random() * 3) + 1;
+        let updatePotentialAnswer = (Math.floor(buttons[similarValueIndex].innerHTML/10)*10) + lastDigit;
+        buttons[similarValueIndex].innerHTML = updatePotentialAnswer;
+    }
+    else
+    {
+        let updatePotentialAnswer = (Math.floor(buttons[correctAnswerIndex+1].innerHTML/10)*10) + lastDigit;
+        buttons[correctAnswerIndex+1].innerHTML = updatePotentialAnswer;
+    }
 }
 
 function getQNo() {
