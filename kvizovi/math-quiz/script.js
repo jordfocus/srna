@@ -180,6 +180,8 @@ function lastmessage() {
 }
 
 function timed() {
+    clearInterval(t);
+    
     t = setInterval(() => {
         progress.style.width = (parseFloat(progress.style.width) - 0.2) + "%";
         console.log("called");

@@ -162,9 +162,11 @@ function lastmessage() {
 }
 
 function timed() {
+    clearInterval(t);
+
     t = setInterval(() => {
         progress.style.width = (parseFloat(progress.style.width) - 0.2) + "%";
-        console.log("called");
+        //console.log("called");
         if (parseFloat(progress.style.width) == 0) {
             clearInterval(t);
             nextQuestion();
