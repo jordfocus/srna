@@ -36,6 +36,9 @@ body {
     text-align: center;
 }
 
+.result-image {
+    width: 80%;
+}
 .answer-card {
     padding: 2rem 0 0;
     display: flex;
@@ -79,7 +82,7 @@ button:hover {
     border-radius: 1rem;
     margin: 2rem auto 1rem;
     padding: 1rem 3rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: rgb(255, 255, 255);
     background-color: rgb(64, 107, 226);
