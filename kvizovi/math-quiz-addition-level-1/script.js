@@ -125,7 +125,7 @@ function lastmessage() {
     clearInterval(t);
     if (fScore.innerText >= 850) {
         let emoji = "&#128525";
-        message.innerHTML = "ОДЛИЧЕН РЕЗУЛТАТ! БРАВО!" + "<div><img class=\"result-image\" src=\"./trophy.webp\" alt=\"image\"></div>";
+        message.innerHTML = "ОДЛИЧЕН РЕЗУЛТАТ! БРАВО!" + "<div><img class=\"result-image\" src=\"../shared/trophy.webp\" alt=\"image\"></div>";
     } else if (fScore.innerText >= 700) {
         let emoji = "&#128531";
         message.innerHTML = "СКОРО ОДЛИЧНО, ДА ПОВЕЖБАМЕ УШТЕ МАЛЦЕ !!" + emoji;
