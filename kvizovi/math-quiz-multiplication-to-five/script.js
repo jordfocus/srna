@@ -54,8 +54,8 @@ function nextQuestion() {
             n2 = Math.floor(Math.random() * 10);
 
             if (n1 * n2 <= 100
-                && n1 > 0
-                && n2 > 0
+                && n1 > 1
+                && n2 > 1
                 && (n1 <= 5 || n2 <= 5)) {
                 break;
             }
