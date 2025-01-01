@@ -72,20 +72,15 @@ function nextQuestion() {
 }
 
 function getOptions() {
+    let randValue = Math.floor(Math.random() * 2);
+    buttons[0].innerHTML = randValue == 0 && answer > n1 ? answer - n1 : answer + n1;
+    randValue = Math.floor(Math.random() * 2);
+    buttons[1].innerHTML = randValue == 0 && answer > n2 ? answer - n2 : answer + n2;
+    randValue = Math.floor(Math.random() * 2);
+    buttons[2].innerHTML = randValue == 0 && answer > 2*n1 ? answer - 2*n1 : answer + 2*n1;
+    randValue = Math.floor(Math.random() * 2);
+    buttons[3].innerHTML = randValue == 0 && answer > 2*n2 ? answer - 2*n2 : answer + 2*n2;
 
-    for (let i = 0; i < 4; i++ && i != ansOpt) {
-        if (answer > 100) {
-            buttons[i].innerHTML = answer + Math.floor(Math.random() * answer * 0.4);
-        } else if (answer > 30 && answer < 100) {
-            buttons[i].innerHTML = answer + Math.floor(Math.random() * answer * 0.6);
-        } else {
-            buttons[i].innerHTML = Math.floor(Math.random() * 100);
-        }
-
-        if (answer < 0) {
-            buttons[i].innerHTML = "-" + buttons[i].innerHTML;
-        }
-    }
     ansOpt = Math.floor(Math.random() * 4);
     buttons[ansOpt].innerHTML = answer;
 }
