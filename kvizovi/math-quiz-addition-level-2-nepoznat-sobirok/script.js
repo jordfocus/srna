@@ -1,45 +1,3 @@
-let n1;
-let n2;
-let opSelector;
-let ansOpt;
-let answer;
-let qNo = document.getElementById("Qno");
-let score = document.getElementById("score");
-let question = document.getElementById("question");
-let buttons = document.getElementsByTagName("button");
-let start = document.getElementById("start-btn");
-let fScore = document.getElementById("final-score");
-let correctAnswers = document.getElementById("correct-answers");
-let startBox = document.getElementById("start-game");
-let gameBox = document.getElementById("in-game");
-let endBox = document.getElementById("end-game");
-let progress = document.getElementById("progress");
-let message = document.getElementById("message");
-let t;
-let correctAnswersCount = 0;
-
-function restart() {
-    score.innerHTML = "0";
-    qNo.innerHTML = "0";
-    nextQuestion();
-
-    gameBox.style.display = "block"
-    startBox.style.display = "none";
-    endBox.style.display = "none";
-    timer.style.display = "block";
-
-    // reset correct answers counter
-    correctAnswersCount = 0;
-}
-
-function whenFinished() {
-    console.log("Finished.")
-    gameBox.style.display = "none"
-    startBox.style.display = "none";
-    endBox.style.display = "flex";
-    lastmessage();
-}
-
 function nextQuestion() {
 
     progress.style.width = "100%";
@@ -67,7 +25,7 @@ function nextQuestion() {
     }
 
     question.innerHTML = n1 + opSelector + n2;
-    answer = eval(question.innerHTML);
+    answer = n2;
     let innerHTMLText = n1 + opSelector + "⬜"
     question.innerHTML = innerHTMLText + " = " + (n1 + n2);
 
@@ -121,38 +79,6 @@ function generateSimilarValue(correctAnswerValue, correctAnswerIndex)
     }
 }
 
-function getQNo() {
-    qNo.innerHTML = parseInt(qNo.innerHTML) + 1;
-    // console.log("Q no: " + qNo.innerHTML);
-}
-
-function getScore() {
-    score.innerHTML = parseInt(score.innerHTML) + parseInt(progress.style.width);
-    // console.log(score.innerHTML);
-}
-
-function doWhenCorrect(i) {
-    buttons[i].style.color = "#fff";
-    buttons[i].style.backgroundColor = "green";
-    // increase correct answers count
-    correctAnswersCount++;
-    getScore();
-}
-
-function doWhenIncorrect(i) {
-    buttons[i].style.color = "#fff";
-    buttons[i].style.backgroundColor = "#fb3640";
-    // console.log("wrong");
-}
-
-function outro(i) {
-    setTimeout(() => {
-        nextQuestion();
-        buttons[i].style.color = "#000";
-        buttons[i].style.backgroundColor = "rgba(0, 0, 0, 0.1)";
-    }, 500);
-}
-
 function lastmessage() {
     clearInterval(t);
     correctAnswers.innerHTML = "Број на точни одговори: "+correctAnswersCount + "/10";
@@ -170,53 +96,3 @@ function lastmessage() {
         message.innerHTML = "СО ПОВЕЌЕ РЕШАВАЊЕ ДО ПОДОБРИ РЕЗУЛТАТИ НАРЕДНИОТ ПАТ" + emoji;
     }
 }
-
-function timed() {
-    clearInterval(t);
-
-    t = setInterval(() => {
-        progress.style.width = (parseFloat(progress.style.width) - 0.2) + "%";
-        console.log("called");
-        if (parseFloat(progress.style.width) == 0) {
-            clearInterval(t);
-            nextQuestion();
-        }
-    }, 100)
-}
-
-buttons[0].addEventListener('click', () => {
-    if (buttons[0].innerText == answer - n1) {
-        doWhenCorrect(0);
-    } else {
-        doWhenIncorrect(0);
-    }
-    clearInterval(t);
-    outro(0);
-});
-buttons[1].addEventListener('click', () => {
-    if (buttons[1].innerText == answer - n1) {
-        doWhenCorrect(1);
-    } else {
-        doWhenIncorrect(1);
-    }
-    clearInterval(t);
-    outro(1);
-});
-buttons[2].addEventListener('click', () => {
-    if (buttons[2].innerText == answer - n1) {
-        doWhenCorrect(2);
-    } else {
-        doWhenIncorrect(2);;
-    }
-    clearInterval(t);
-    outro(2);
-});
-buttons[3].addEventListener('click', () => {
-    if (buttons[3].innerText == answer - n1) {
-        doWhenCorrect(3);
-    } else {
-        doWhenIncorrect(3);
-    }
-    clearInterval(t);
-    outro(3);
-});
