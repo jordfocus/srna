@@ -95,6 +95,13 @@
     font-size: 100px;
   }
 
+  .testovi-h1 {
+    background-color: pink; 
+    font-size:1.5em; 
+    padding: 15px;
+    font-family: cursive;
+  }
+
   .image-display {
     height: 200px;
     width: 100%;
