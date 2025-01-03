@@ -1191,6 +1191,12 @@ Main Banner Area CSS
   z-index: 1;
 }
 
+.testovi-h1 {
+  background-color: pink; 
+  font-size:3em; 
+  padding: 15px;
+  font-family: cursive;
+}
 .info-section {
   padding-top: 20px;
   padding-left: 20px;
