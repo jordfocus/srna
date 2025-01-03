@@ -9,12 +9,14 @@ let question = document.getElementById("question");
 let buttons = document.getElementsByTagName("button");
 let start = document.getElementById("start-btn");
 let fScore = document.getElementById("final-score");
+let correctAnswers = document.getElementById("correct-answers");
 let startBox = document.getElementById("start-game");
 let gameBox = document.getElementById("in-game");
 let endBox = document.getElementById("end-game");
 let progress = document.getElementById("progress");
 let message = document.getElementById("message");
 let t;
+let correctAnswersCount = 0;
 
 function restart() {
     score.innerHTML = "0";
@@ -25,6 +27,9 @@ function restart() {
     startBox.style.display = "none";
     endBox.style.display = "none";
     timer.style.display = "block";
+
+    // reset correct answers counter
+    correctAnswersCount = 0;
 }
 
 function whenFinished() {
@@ -98,6 +103,8 @@ function getScore() {
 function doWhenCorrect(i) {
     buttons[i].style.color = "#fff";
     buttons[i].style.backgroundColor = "green";
+    // increase correct answers count
+    correctAnswersCount++;
     getScore();
 }
 
@@ -117,6 +124,7 @@ function outro(i) {
 
 function lastmessage() {
     clearInterval(t);
+    correctAnswers.innerHTML = "Број на точни одговори: "+correctAnswersCount + "/10";
     if (fScore.innerText >= 850) {
         let emoji = "&#128525";
         message.innerHTML = "ОДЛИЧЕН РЕЗУЛТАТ! БРАВО!" + "<div><img class=\"result-image\" src=\"../shared/trophy.webp\" alt=\"image\"></div>";

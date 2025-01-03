@@ -45,6 +45,10 @@ body {
     flex-direction: column;
 }
 
+#correct-answers {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
 button {
     transition: 0.3s;
     cursor: pointer;
