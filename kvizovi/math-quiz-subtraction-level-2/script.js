@@ -79,7 +79,7 @@ function generateSimilarValue(correctAnswerValue, correctAnswerIndex)
 
 function lastmessage() {
     clearInterval(t);
-    correctAnswers.innerHTML = "Број на точни одговори: "+correctAnswersCount + "/10";
+    correctAnswers.innerHTML = correctAnswersCount + "/10";
     if (fScore.innerText >= 850) {
         let emoji = "&#128525";
         message.innerHTML = "ОДЛИЧЕН РЕЗУЛТАТ! БРАВО!" + "<div><img class=\"result-image\" src=\"../shared/trophy.webp\" alt=\"image\"></div>";
@@ -93,4 +93,7 @@ function lastmessage() {
         let emoji = "&#128577";
         message.innerHTML = "СО ПОВЕЌЕ РЕШАВАЊЕ ДО ПОДОБРИ РЕЗУЛТАТИ НАРЕДНИОТ ПАТ" + emoji;
     }
+
+    setCorrectAnswersDotColor(correctAnswersCount);
+    setCorrectAnswersAndTimeDotColor(fScore.innerText);
 }
