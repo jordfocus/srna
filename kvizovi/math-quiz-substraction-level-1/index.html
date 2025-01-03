@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../shared/style.css">
+    <script src="../shared/shared-script.js" defer></script>
     <script src="script.js" defer></script>
     <title>Srna.mk математички квиз</title>
 </head>
@@ -44,8 +45,10 @@
         </div>
         <div id="end-game">
             <h1>&#128515</h1>
-            <h1>Вашиот резултат е : <span id="final-score">0</span> / 1000</h1>
-            <p id="correct-answers"></p>
+            <span>Број на точни одговори:</span>
+            <h2><div><span id="correct-answers"></span><span id="result-dot-1" class="dot"></span></div></h2>
+            <span>Резултат (точни одговори + време):</span> 
+            <h2><span id="final-score">0</span> / 1000<span id="result-dot-2" class="dot"></span></h2>
             <p id="message"></p>
             <a id="restart-btn" onclick="restart()">ДА ИГРАМЕ ПОВТОРНО</a>
             Или проверете што има ново на <a href="https://srna.mk">srna.mk</a> 
