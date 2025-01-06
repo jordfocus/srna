@@ -79,23 +79,3 @@ function generateSimilarValue(correctAnswerValue, correctAnswerIndex)
     }
 }
 
-function lastmessage() {
-    clearInterval(t);
-    correctAnswers.innerHTML = correctAnswersCount + "/10";
-    if (fScore.innerText >= 800) {
-        let emoji = "&#128525";
-        message.innerHTML = "ОДЛИЧЕН РЕЗУЛТАТ! БРАВО!" + "<div><img class=\"result-image\" src=\"../shared/trophy.webp\" alt=\"image\"></div>";
-    } else if (fScore.innerText >= 600) {
-        let emoji = "&#128531";
-        message.innerHTML = "СКОРО ОДЛИЧНО, ДА ПОВЕЖБАМЕ УШТЕ МАЛЦЕ !!" + emoji;
-    } else if (fScore.innerText >= 300) {
-        let emoji = "&#128549";
-        message.innerHTML = "МОЖЕШ И ПОДОБРО, САМО  ТРЕБА ПОВЕЌЕ ВЕЖБАЊЕ" + emoji;
-    } else {
-        let emoji = "&#128577";
-        message.innerHTML = "СО ПОВЕЌЕ РЕШАВАЊЕ ДО ПОДОБРИ РЕЗУЛТАТИ НАРЕДНИОТ ПАТ" + emoji;
-    }
-
-    setCorrectAnswersDotColor(correctAnswersCount);
-    setCorrectAnswersAndTimeDotColor(fScore.innerText);
-}

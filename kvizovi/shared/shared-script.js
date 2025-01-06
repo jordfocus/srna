@@ -158,3 +158,31 @@ function setCorrectAnswersAndTimeDotColor(score)
         resultDot2.style="background-color:red";
     }
 }
+
+function lastmessage() {
+    clearInterval(t);
+    let trophyGifElement = "";
+    if (correctAnswersCount == 10)
+    {
+        trophyGifElement = "<div><img class=\"result-image\" src=\"../shared/trophy.webp\" alt=\"image\"></div>";     
+    }
+
+    correctAnswers.innerHTML = correctAnswersCount + "/10";
+
+    if (correctAnswersCount > 8) {
+        let emoji = "&#128525";
+        message.innerHTML = "ОДЛИЧЕН РЕЗУЛТАТ! БРАВО!" + trophyGifElement;
+    } else if (correctAnswersCount > 6) {
+        let emoji = "&#128531";
+        message.innerHTML = "СКОРО ОДЛИЧНО, ДА ПОВЕЖБАМЕ УШТЕ МАЛЦЕ !!" + emoji;
+    } else if (correctAnswersCount > 4) {
+        let emoji = "&#128549";
+        message.innerHTML = "МОЖЕШ И ПОДОБРО, САМО  ТРЕБА ПОВЕЌЕ ВЕЖБАЊЕ" + emoji;
+    } else {
+        let emoji = "&#128577";
+        message.innerHTML = "СО ПОВЕЌЕ РЕШАВАЊЕ ДО ПОДОБРИ РЕЗУЛТАТИ НАРЕДНИОТ ПАТ" + emoji;
+    }
+
+    setCorrectAnswersDotColor(correctAnswersCount);
+    setCorrectAnswersAndTimeDotColor(fScore.innerText);
+}

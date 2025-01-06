@@ -93,24 +93,3 @@ function getOptions() {
     ansOpt = Math.floor(Math.random() * 4);
     buttons[ansOpt].innerHTML = answer;
 }
-
-function lastmessage() {
-    clearInterval(t);
-    correctAnswers.innerHTML = correctAnswersCount + "/10";
-    if (fScore.innerText >= 850) {
-        let emoji = "&#128525";
-        message.innerHTML = "ОДЛИЧЕН РЕЗУЛТАТ! БРАВО!" + "<div><img class=\"result-image\" src=\"../shared/trophy.webp\" alt=\"image\"></div>";
-    } else if (fScore.innerText >= 700) {
-        let emoji = "&#128531";
-        message.innerHTML = "СКОРО ОДЛИЧНО, ДА ПОВЕЖБАМЕ УШТЕ МАЛЦЕ !!" + emoji;
-    } else if (fScore.innerText >= 450) {
-        let emoji = "&#128549";
-        message.innerHTML = "МОЖЕШ И ПОДОБРО, САМО  ТРЕБА ПОВЕЌЕ ВЕЖБАЊЕ" + emoji;
-    } else {
-        let emoji = "&#128577";
-        message.innerHTML = "СО ПОВЕЌЕ РЕШАВАЊЕ ДО ПОДОБРИ РЕЗУЛТАТИ НАРЕДНИОТ ПАТ" + emoji;
-    }
-
-    setCorrectAnswersDotColor(correctAnswersCount);
-    setCorrectAnswersAndTimeDotColor(fScore.innerText);
-}
