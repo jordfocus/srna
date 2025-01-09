@@ -17,6 +17,8 @@ let progress = document.getElementById("progress");
 let message = document.getElementById("message");
 let resultDot1 = document.getElementById("result-dot-1");
 let resultDot2 = document.getElementById("result-dot-2");
+let audioSuccess = document.getElementById("audio-success");
+let audioFail = document.getElementById("audio-fail");
 let operator = ['+', '-', '*', '/'];
 
 let t;
@@ -57,6 +59,8 @@ function getScore() {
 function doWhenCorrect(i) {
     buttons[i].style.color = "#fff";
     buttons[i].style.backgroundColor = "green";
+    audioSuccess.load();
+    audioSuccess.play();
     // increase correct answers count
     correctAnswersCount++;
     getScore();
@@ -65,6 +69,9 @@ function doWhenCorrect(i) {
 function doWhenIncorrect(i) {
     buttons[i].style.color = "#fff";
     buttons[i].style.backgroundColor = "#fb3640";
+
+    audioFail.load();
+    audioFail.play();
     // console.log("wrong");
 }
 
