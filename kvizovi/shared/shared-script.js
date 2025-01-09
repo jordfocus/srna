@@ -59,8 +59,12 @@ function getScore() {
 function doWhenCorrect(i) {
     buttons[i].style.color = "#fff";
     buttons[i].style.backgroundColor = "green";
-    audioSuccess.load();
-    audioSuccess.play();
+    if (audioSuccess != null)
+    {
+        audioSuccess.load();
+        audioSuccess.play();
+    }
+    
     // increase correct answers count
     correctAnswersCount++;
     getScore();
@@ -70,8 +74,11 @@ function doWhenIncorrect(i) {
     buttons[i].style.color = "#fff";
     buttons[i].style.backgroundColor = "#fb3640";
 
-    audioFail.load();
-    audioFail.play();
+    if (audioFail != null)
+    {    
+        audioFail.load();
+        audioFail.play();
+    }
     // console.log("wrong");
 }
 
