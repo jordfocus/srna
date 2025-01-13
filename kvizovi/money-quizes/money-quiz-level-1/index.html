@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./money-style.css">
+    <!-- <script src="../shared/shared-script.js" defer></script> -->
+    <script src="script.js" defer></script>
+    <title>Srna.mk математички квиз</title>
+    <link rel="icon" type="image/png" href="../../files/favicon.png">
+</head>
+
+<body>
+    <audio id="coin-change" src="../shared/coin.mp3"></audio>
+    <audio id="thank-you" src="../shared/thank-you.mp3"></audio>
+    <div class="container">
+        <div id="start-game">
+            <h1>Добродојдовте на играта за плаќање со монети.</h1>
+            <p>Притиснете на копчето подолу за да започнете</p>
+            <a id="start-btn" onclick="startQuiz()">АЈДЕ ДА ИГРАМЕ</a>
+            <a href="https://srna.mk">srna.mk</a>
+        </div>
+        <div id="in-game">
+            <div class="top-section">
+                <h3>Плаќање производ со пари</h3>
+                <div class="game-data">
+                    <p>Прашање :
+                        <span id="Qno">0</span>/10
+                    </p>
+                    <p>Резултат: <span id="score">0</span></p>
+                </div>
+                <!-- <div id="timer">
+                    <div id="progress"></div>
+                </div> -->
+            </div>
+            <div class="question-card">
+                <p id="question">This is question</p>
+            </div>
+            <h1 id="current-amount">0</h1>
+            <p>Одберете за да ја добиете точната сума: </p>
+            <div class="container">
+                <div class="input-row">
+                  <div class="title">
+                    <img src="./img/1-denar.jpg" alt="Еден денар" width="50" height="50">
+                  </div>
+                  <div class="input">
+                    <button class="minus" aria-label="Decrease by one" disabled>
+                      <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="1" x2="16" y2="1" stroke="#0064FE" stroke-width="2" class="icon" />
+                      </svg>
+                    </button>
+                    <div id="coin-one" class="number dim">0</div>
+                    <button class="plus" aria-label="Increase by one">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon">
+                        <line x1="8" y1="4.37114e-08" x2="8" y2="16" stroke="#0064FE" stroke-width="2" />
+                        <line y1="8" x2="16" y2="8" stroke="#0064FE" stroke-width="2" />
+                      </svg>
+              
+                    </button>
+                  </div>
+                </div>
+
+                <div class="input-row">
+                  <div class="title">
+                    <img src="./img/2-denars.jpg" alt="Два денари" width="50" height="50">
+                  </div>
+                  <div class="input">
+                    <button class="minus" aria-label="Decrease by one" disabled>
+                      <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="1" x2="16" y2="1" stroke="#0064FE" stroke-width="2" class="icon" />
+                      </svg>
+                    </button>
+                    <div id="coin-two" class="number dim">0</div>
+                    <button class="plus" aria-label="Increase by one">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon">
+                        <line x1="8" y1="4.37114e-08" x2="8" y2="16" stroke="#0064FE" stroke-width="2" />
+                        <line y1="8" x2="16" y2="8" stroke="#0064FE" stroke-width="2" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="input-row">
+                  <div class="title">
+                    <img src="./img/5-denars.jpg" alt="Два денари" width="50" height="50">
+                  </div>
+                  <div class="input">
+                    <button class="minus" aria-label="Decrease by one" disabled>
+                      <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="1" x2="16" y2="1" stroke="#0064FE" stroke-width="2" class="icon" />
+                      </svg>
+                    </button>
+                    <div id="coin-five" class="number dim">0</div>
+                    <button class="plus" aria-label="Increase by one">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon">
+                        <line x1="8" y1="4.37114e-08" x2="8" y2="16" stroke="#0064FE" stroke-width="2" />
+                        <line y1="8" x2="16" y2="8" stroke="#0064FE" stroke-width="2" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="input-row">
+                  <div class="title">
+                    <img src="./img/10-denars.jpg" alt="Два денари" width="50" height="50">
+                  </div>
+                  <div class="input">
+                    <button class="minus" aria-label="Decrease by one" disabled>
+                      <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="1" x2="16" y2="1" stroke="#0064FE" stroke-width="2" class="icon" />
+                      </svg>
+                    </button>
+                    <div id="coin-ten" class="number dim">0</div>
+                    <button class="plus" aria-label="Increase by one">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon">
+                        <line x1="8" y1="4.37114e-08" x2="8" y2="16" stroke="#0064FE" stroke-width="2" />
+                        <line y1="8" x2="16" y2="8" stroke="#0064FE" stroke-width="2" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- <div class="input-row">
+                  <div class="title">
+                    <img src="./img/10-denars.jpg" alt="Десет денари" width="100" height="50">
+                  </div>
+                  <div class="input">
+                    <button class="minus" aria-label="Decrease by one" disabled>
+                      <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="1" x2="16" y2="1" stroke="#0064FE" stroke-width="2" class="icon" />
+                      </svg>
+              
+                    </button>
+                    <div id="coin-ten" class="number dim">0</div>
+                    <button class="plus" aria-label="Increase by one">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="plus">
+                        <line x1="8" y1="4.37114e-08" x2="8" y2="16" stroke="#0064FE" stroke-width="2" />
+                        <line y1="8" x2="16" y2="8" stroke="#0064FE" stroke-width="2" />
+                      </svg>
+                    </button>
+                  </div>
+                </div> -->
+                <!-- <div class="input-row">
+                    <div class="title">
+                        <img src="./img/50-denars.jpg" alt="Педесет денари" width="100" height="50">
+                    </div>
+                    <div class="input">
+                      <button class="minus" aria-label="Decrease by one" disabled>
+                        <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <line y1="1" x2="16" y2="1" stroke="#0064FE" stroke-width="2" class="icon" />
+                        </svg>
+                      </button>
+                      <div id="coin-fifty" class="number dim">0</div>
+                      <button class="plus" aria-label="Increase by one">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="plus">
+                          <line x1="8" y1="4.37114e-08" x2="8" y2="16" stroke="#0064FE" stroke-width="2" />
+                          <line y1="8" x2="16" y2="8" stroke="#0064FE" stroke-width="2" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div> -->
+              </div>
+        </div>
+        <div id="end-game">
+            <h1>Успешно ја заврши играта за плаќање производи со монети</h1>
+            <p id="message"></p>
+            <a id="restart-btn" onclick="restart()">ДА ИГРАМЕ ПОВТОРНО</a>
+            Или одберете некој од другите <a href="https://srna.mk/testovi.html">забавни тестови</a>
+        </div>
+    </div>
+</body>
+
+</html>
