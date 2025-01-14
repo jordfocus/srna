@@ -36,8 +36,8 @@ body {
 .question-card {
     background-color: aquamarine;
     border-radius: 1rem;
-    margin: 2rem auto;
-    padding: 2rem 0;
+    margin: 1rem auto;
+    padding: 1rem 0;
     text-align: center;
 }
 
@@ -97,6 +97,8 @@ body {
 #in-game,
 #end-game {
     display: none;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 #start-game>p {
