@@ -30,6 +30,8 @@ let coinFifty = document.getElementById("coin-fifty");
 let coinChange = document.getElementById("coin-change");
 let thankYou = document.getElementById("thank-you");
 
+let productImage = document.getElementById("product");
+
 
 // download images from
 // https://en.numista.com/catalogue/note208546.html
@@ -172,6 +174,10 @@ function addEventListenersToButtons() {
       
 }
 
+function setNewProductImage() {
+    var productImagePath = "./img/"+Math.floor((Math.random()*10))+"-product.jpg";
+    productImage.src = productImagePath;
+}
 function nextQuestion() {
     //addEventListenersToButtons();
 
@@ -182,13 +188,14 @@ function nextQuestion() {
     if (qNo.innerText == "10") {
         whenFinished();
     }
-    answer = Math.floor(Math.random() * 150);
+    answer = Math.floor(Math.random() * 150)+1;
 
     question.innerHTML = "ЦЕНА: " + answer + " денари.";
 
     getOptions();
     getQNo();
     resetButtonValues();    
+    setNewProductImage();
 }
 
 function resetButtonValues()
