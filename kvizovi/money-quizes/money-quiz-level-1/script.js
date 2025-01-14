@@ -81,7 +81,7 @@ function startQuiz() {
 }
 
 function restart() {
-    score.innerHTML = "0";
+    // score.innerHTML = "0";
     qNo.innerHTML = "0";
     nextQuestion();
 
