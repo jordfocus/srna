@@ -17,10 +17,11 @@ body {
     align-items: center;
 }
 
-.disable-dbl-tap-zoom {
-    touch-action: manipulation;
+:root {
+    touch-action: pan-x pan-y;
+    height: 100% 
   }
-  
+
 .container {
     background-color: aliceblue;
     transition: 1s ease;
