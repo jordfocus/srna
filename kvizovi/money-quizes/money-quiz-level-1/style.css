@@ -17,6 +17,10 @@ body {
     align-items: center;
 }
 
+.disable-dbl-tap-zoom {
+    touch-action: manipulation;
+  }
+  
 .container {
     background-color: aliceblue;
     transition: 1s ease;
