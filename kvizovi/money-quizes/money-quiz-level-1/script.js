@@ -63,7 +63,7 @@ function recalculate()
 }
 
 function startQuiz() {
-    score.innerHTML = "0";
+    // score.innerHTML = "0";
     qNo.innerHTML = "0";
     nextQuestion();
 
@@ -184,7 +184,7 @@ function nextQuestion() {
     }
     answer = Math.floor(Math.random() * 150);
 
-    question.innerHTML = "Овој производ чини " + answer + " денари. Платете го со точна сума...";
+    question.innerHTML = "ЦЕНА: " + answer + " денари.";
 
     getOptions();
     getQNo();
