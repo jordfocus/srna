@@ -19,6 +19,7 @@ let resultDot1 = document.getElementById("result-dot-1");
 let resultDot2 = document.getElementById("result-dot-2");
 let audioSuccess = document.getElementById("audio-success");
 let audioFail = document.getElementById("audio-fail");
+let audioYay = document.getElementById("audio-yay");
 let operator = ['+', '-', '*', '/'];
 
 let t;
@@ -179,6 +180,11 @@ function lastmessage() {
     if (correctAnswersCount == 10)
     {
         trophyGifElement = "<div><img class=\"result-image\" src=\"../shared/trophy.webp\" alt=\"image\"></div>";     
+        if (audioYay != null)
+        {    
+            audioYay.load();
+            audioYay.play();
+        }
     }
 
     correctAnswers.innerHTML = correctAnswersCount + "/10";
