@@ -7,13 +7,13 @@ function nextQuestion() {
     if (qNo.innerText == "10") {
         whenFinished();
     }
-    n1 = Math.floor(Math.random() * 100);
+    n1 = Math.floor(Math.random() * 30);
     n2 = 2;
     opSelector = "*";
 
     if (opSelector == "*") {
         for (let i = 0; i < 100; i++) {
-            n1 = Math.floor(Math.random() * 10);
+            n1 = Math.floor(Math.random() * 30);
             n2 = 2;
 
             if (n1 * n2 <= 100

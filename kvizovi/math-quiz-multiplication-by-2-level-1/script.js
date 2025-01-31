@@ -7,7 +7,7 @@ function nextQuestion() {
     if (qNo.innerText == "10") {
         whenFinished();
     }
-    n1 = Math.floor(Math.random() * 100);
+    n1 = Math.floor(Math.random() * 10);
     n2 = 2;
     opSelector = "*";
 
