@@ -104,6 +104,19 @@ function timed() {
     }, 100)
 }
 
+function timed_slow() {
+    clearInterval(t);
+    
+    t = setInterval(() => {
+        progress.style.width = (parseFloat(progress.style.width) - 0.05) + "%";
+        console.log("called");
+        if (parseFloat(progress.style.width) == 0) {
+            clearInterval(t);
+            nextQuestion();
+        }
+    }, 100)
+}
+
 buttons[0].addEventListener('click', () => {
     if (buttons[0].innerText == answer) {
         doWhenCorrect(0);

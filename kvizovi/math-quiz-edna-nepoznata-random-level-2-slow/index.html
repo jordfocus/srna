@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../shared/style.css">
+    <script src="../shared/shared-script.js" defer></script>
+    <script src="script.js" defer></script>
+    <title>Srna.mk математички квиз</title>
+    <link rel="icon" type="image/png" href="../../files/favicon.png">
+</head>
+
+<body>
+    <audio id="audio-success" src="../shared/success.mp3"></audio>
+    <audio id="audio-fail" src="../shared/fail.mp3"></audio>
+    <audio id="audio-yay" src="../shared/yay.mp3"></audio>
+    <div class="container">
+        <div id="start-game">
+            <h3>Квиз со задачи со една непозната (ниво 2 slow) на Срна.</h3>
+            <p>Притиснете на копчето подолу за да започнете</p>
+            <a id="start-btn" onclick="restart()">АЈДЕ ДА РЕШАВАМЕ</a>
+            <p>Одете на <a href="https://srna.mk">почетната страна</a>
+                или одберете некој од <a href="https://srna.mk/testovi.html">забавните тестови</a></p>
+        </div>
+        <div id="in-game">
+            <div class="top-section">
+                <h1>Математичка игра</h1>
+                <div class="game-data">
+                    <p>Прашање :
+                        <span id="Qno">0</span>/10
+                    </p>
+                    <p>Резултат: <span id="score">0</span></p>
+                </div>
+                <div id="timer">
+                    <div id="progress"></div>
+                </div>
+            </div>
+            <div class="question-card">
+                <h1 id="question">This is question</h1>
+            </div>
+            <h3>Одберете го точниот одговор: </h3>
+            <div class="answer-card">
+                <button>Option A</button>
+                <button>Option B</button>
+                <button>Option C</button>
+                <button>Option D</button>
+            </div>
+        </div>
+        <div id="end-game">
+            <h1>Задачи со една непозната (ниво 2 slow)</h1>
+            <span>Број на точни одговори:</span>
+            <h2><div><span id="correct-answers"></span><span id="result-dot-1" class="dot"></span></div></h2>
+            <span>Резултат (точни одговори + време):</span> 
+            <h2><span id="final-score">0</span> / 1000<span id="result-dot-2" class="dot"></span></h2>
+            <p id="message"></p>
+            <a id="restart-btn" onclick="restart()">ДА ИГРАМЕ ПОВТОРНО</a>
+            Или одберете некој од другите <a href="https://srna.mk/testovi.html">забавни тестови</a>
+        </div>
+    </div>
+</body>
+
+</html>
